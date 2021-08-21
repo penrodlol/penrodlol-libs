@@ -3,15 +3,15 @@
 </h1>
 <p align="center">
 	<img
-		src="../../../assets/supabase-logo-icon.png"
+		src="https://avatars.githubusercontent.com/u/54469796"
 		alt="Supabase Logo"
 		width="80"
 		height="80"
 		style="margin-right: 50px"
 	>
 	<img
-		src="../../../assets/angular.png"
-		alt="Supabase Logo"
+		src="https://angular.io/assets/images/logos/angular/angular.svg"
+		alt="Angular Logo"
 		width="80"
 		height="80"
 	>
