@@ -1,6 +1,10 @@
 {
   "name": "@penrodlol/supabaseng",
+  "description": "Angular/Supabase Client",
   "version": "0.0.1",
+  "author": "penrodlol",
+  "repository": "https://github.com/penrodlol/penrodlol-libs",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^12.1.0",
     "@angular/core": "^12.1.0",

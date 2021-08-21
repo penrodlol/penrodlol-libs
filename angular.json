@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/ng-docs",
       "sourceRoot": "apps/ng-docs/src",
-      "prefix": "penrodlol-libs",
+      "prefix": "penrodlol",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -119,9 +119,51 @@
           }
         }
       }
+    },
+    "ng-libs-supabaseng": {
+      "projectType": "library",
+      "root": "libs/ng-libs/supabaseng",
+      "sourceRoot": "libs/ng-libs/supabaseng/src",
+      "prefix": "penrodlol",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/ng-libs/supabaseng"],
+          "options": {
+            "project": "libs/ng-libs/supabaseng/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-libs/supabaseng/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ng-libs/supabaseng/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-libs/supabaseng"],
+          "options": {
+            "jestConfig": "libs/ng-libs/supabaseng/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ng-libs/supabaseng/src/**/*.ts",
+              "libs/ng-libs/supabaseng/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
+    "analytics": false,
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {

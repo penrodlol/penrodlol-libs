@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "penrodlolLibs",
+            "prefix": "penrodlol",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "penrodlol-libs",
+            "prefix": "penrodlol",
             "style": "kebab-case"
           }
         ]

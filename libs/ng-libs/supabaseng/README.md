@@ -1,7 +1,79 @@
-# ng-libs-supabaseng
+<h1 align="center">
+	SupabaseNg - Angular/Supabase Client
+</h1>
+<p align="center">
+	<img
+		src="../../../assets/supabase-logo-icon.png"
+		alt="Supabase Logo"
+		width="80"
+		height="80"
+		style="margin-right: 50px"
+	>
+	<img
+		src="../../../assets/angular.png"
+		alt="Supabase Logo"
+		width="80"
+		height="80"
+	>
+	<br><br>
+	<i>
+		A simple Angular wrapper for the Supabase Client.
+	</i>
+</p>
+<hr>
+<br>
 
-This library was generated with [Nx](https://nx.dev).
+## Setup
 
-## Running unit tests
+```
+npm install @penrodlol/supabaseng
+```
 
-Run `nx test ng-libs-supabaseng` to execute the unit tests.
+<br>
+
+Initialize Supabase Client onces during Angular application startup.
+<br>
+Supports all *SupabaseClientOptions* as well.
+```ts
+@NgModule({
+  imports: [
+    SupabasengModule.initClient({
+      url: 'https://xyzcompany.supabase.co',
+      key: 'public-anon-key',
+			...
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+<br>
+<hr>
+<br>
+
+## Usage
+
+<br>
+Access Supabase clients:
+
+```ts
+@Component({...})
+export class AppComponent {
+  constructor(private supabase: Supabase) {
+    this.supabase.client;  // -> SupabaseClient
+    this.supabase.auth;    // -> SupabaseAuthClient
+    this.supabase.storage; // -> SupabaseStorageClient
+  }
+}
+```
+
+Performing table operations:
+
+```ts
+@Component({...})
+export class AppComponent {
+  constructor(private supabase: Supabase) {
+    this.supabase.from<...>('...') // -> SupabaseQueryBuilder<...>
+  }
+}
+```
