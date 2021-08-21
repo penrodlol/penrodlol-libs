@@ -21,15 +21,12 @@
 	</i>
 </p>
 <hr>
-<br>
 
 ## Setup
 
 ```
 npm install @penrodlol/supabaseng
 ```
-
-<br>
 
 Initialize Supabase Client onces during Angular application startup.
 <br>
@@ -46,10 +43,7 @@ Supports all *SupabaseClientOptions* as well.
 })
 export class AppModule {}
 ```
-
-<br>
 <hr>
-<br>
 
 ## Usage
 
