@@ -28,7 +28,7 @@
 npm install @penrodlol/supabaseng
 ```
 
-Initialize Supabase Client onces during Angular application startup.
+Initialize Supabase Client once during Angular application startup.
 <br>
 Supports all *SupabaseClientOptions* as well.
 ```ts
