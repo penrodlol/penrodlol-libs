@@ -54,9 +54,9 @@ Access Supabase clients:
 @Component({...})
 export class AppComponent {
   constructor(private supabase: Supabase) {
-    this.supabase.client;  // -> SupabaseClient
-    this.supabase.auth;    // -> SupabaseAuthClient
-    this.supabase.storage; // -> SupabaseStorageClient
+    const client = this.supabase.client;   // -> SupabaseClient
+    const auth = this.supabase.auth;       // -> SupabaseAuthClient
+    const storage = this.supabase.storage; // -> SupabaseStorageClient
   }
 }
 ```
@@ -67,7 +67,13 @@ Performing table operations:
 @Component({...})
 export class AppComponent {
   constructor(private supabase: Supabase) {
-    this.supabase.from<...>('...') // -> SupabaseQueryBuilder<...>
+    this.supabase.from<Data>('table') // -> SupabaseQueryBuilder<...>
+
+	// Each CRUD's second argument matches original supabase-js arguments.
+    this.supabase.select<Data>('table', {'...'}) // -> PostgrestFilterBuilder<...>
+    this.supabase.upsert<Data>('table', {'...'}) // -> PostgrestFilterBuilder<...>
+    this.supabase.update<Data>('table', {'...'}) // -> PostgrestFilterBuilder<...>
+    this.supabase.delete<Data>('table', {'...'}) // -> PostgrestFilterBuilder<...>
   }
 }
 ```

@@ -1,15 +1,15 @@
 import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { createClient } from '@supabase/supabase-js';
-import { SuprabaseClientConfig } from './supabase-config.interface';
-import { Supabase } from './supabase.service';
+import { Supabase } from './supabaseng.service';
+import { SuprabaseClientConfig } from './supabaseng.types';
 
 @NgModule()
-export class SupabasengModule {
+export class SupabaseModule {
   static initClient(
     config: SuprabaseClientConfig
-  ): ModuleWithProviders<SupabasengModule> {
+  ): ModuleWithProviders<SupabaseModule> {
     return {
-      ngModule: SupabasengModule,
+      ngModule: SupabaseModule,
       providers: [
         {
           provide: APP_INITIALIZER,
